@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片自动处理</title>
+	<link href="./css/demo.css" rel="stylesheet" />
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/smartIMG.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.mainScroller').css('height',$(window).height()/2);
+		});
+	</script>
+	<style type="text/css">
+		/*body{height:100%;overflow: hidden;}*/
+	</style>
+</head>
+<body>
+	<section class="demo-container">
+		<article>
+			<dl>
+				<dd>1.概述</dd>
+				<dt>
+					解决图片自适应宽高问题：根据设定的宽高比，来自己调整图片的高度，并可以实现图片居中位置显示。<br/>
+					同时，支持图片懒加载技术以及高低分屏幕加载不同图片的需求,响应式<br/>
+					只需要在需要应用特定效果的图片父级容器上添加相应配置即可。
+				</dt>
+				<dd>2.参数说明</dd>
+				<dt>
+					<ul>
+						<li>"ratio" : "16:9",				//图片的宽高比</li>
+						<li>"lazy-load" : false,				//是否启用懒加载</li>
+						<li>"multi-load" : false,			//是否依据屏幕分辨率加载不同图片</li>
+						<li>'multi-data' : null,			//依据分辨率加载不同图片的数据地图</li>
+						<li>"load-class" : 'loaded',		//懒加载图片，懒加载完毕后添加的类标识</li>
+						<li>"load-func" : this.showIt,		//懒加载图片，加载完毕后执行的方法</li>
+						<li>"load-type" : 'fadeIn',			//懒加载图片，加载完毕后出现的方式</li>
+						<li>"img-parent" : 'img-parent',	//图片的外层容器类</li>
+						<li>"main-container" : '',			//滚动列表外层容器</li>
+						<li>"center-fix" : true				//对于不符合设定宽高比的图片是否启用居中定位</li>
+					</ul>
+				</dt>
+				<dd>3.demo</dd>
+				<dt>
+					<div class="mainScroller" style="width:100%;overflow-y:auto;overflow-x:hidden;">
+						<div class="smartIMG" data-setting='{"ratio":"5:3","lazy-load":true,"multi-load":true,"main-container" : "mainScroller","drawing":false}'>
+							<ul class="list">
+								<li class="clearfix">
+									<div class="item-face img-parent"><img class="smartIMG-ignore" data-src="./images/1.jpg" data-mini="./images/1_mini.jpg" src="./images/3.jpg" alt="" style="width:10%;"></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/2.jpg" data-mini="./images/2_mini.jpg" src="./images/3.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/3.jpg" data-mini="./images/3_mini.jpg" src="./images/3.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/1.jpg" data-mini="./images/1_mini.jpg" src="./images/3.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/2.jpg" data-mini="./images/2_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/3.jpg" data-mini="./images/3_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/1.jpg" data-mini="./images/1_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/2.jpg" data-mini="./images/2_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/3.jpg" data-mini="./images/3_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/1.jpg" data-mini="./images/1_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/2.jpg" data-mini="./images/2_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="item-face img-parent"><img data-src="./images/3.jpg" data-mini="./images/3_mini.jpg" alt=""></div>
+									<div class="item-content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</dt>
+				<dt>
+					<ul class="demo clearfix">
+						<li>
+							<strong>图片处理：比例1:1 —— 不自动居中 —— 不启用懒加载 —— 无多图加载</strong>
+							<div class="smartIMG" data-setting='{"ratio":"2:1","lazy-load":false}'>
+								<ul class="list">
+									<li class="clearfix">
+										<div class="item-face img-parent"><img src="./images/1.jpg" alt=""></div>
+										<div class="item-content">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+										</div>
+									</li>
+									<li class="clearfix">
+										<div class="item-face img-parent"><img src="./images/2.jpg" alt=""></div>
+										<div class="item-content">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+										</div>
+									</li>
+									<li class="clearfix">
+										<div class="item-face img-parent"><img src="./images/3.jpg" alt=""></div>
+										<div class="item-content">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<strong>图片处理：比例1:1 —— 自动居中 —— 不启用懒加载 —— 无多图加载</strong>
+							<div class="smartIMG" data-setting='{"ratio":"2:1","lazy-load":false,"center-fix":true}'>
+								<ul class="list">
+									<li class="clearfix">
+										<div class="item-face img-parent"><img src="./images/1.jpg" alt=""></div>
+										<div class="item-content">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+										</div>
+									</li>
+									<li class="clearfix">
+										<div class="item-face img-parent"><img src="./images/2.jpg" alt=""></div>
+										<div class="item-content">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+										</div>
+									</li>
+									<li class="clearfix">
+										<div class="item-face img-parent"><img src="./images/3.jpg" alt=""></div>
+										<div class="item-content">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li></li>
+					</ul>
+				</dt>
+			</dl>
+		</article>‘
+
+		<br/><br/><br/>
+		<div class="smartIMG" data-setting='{"ratio":"16:9"}'>
+			<ul class="list">
+				<li class="clearfix">
+					<div class="smartIMG" data-setting='{"ratio":"8:1","img-parent" : "imgP"}'>
+						<div class="imgP"><img src="./images/1.jpg" alt=""></div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="item-face img-parent"><img src="./images/1.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="item-face img-parent"><img src="./images/2.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="item-face img-parent"><img src="./images/3.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+					</div>
+				</li>
+			</ul>
+		</div>
+		<h2>图片处理：比例1:1 —— 不自动居中 —— 启用懒加载 —— 无多图加载</h2>
+		<div class="smartIMG" data-setting='{"ratio":"5:3","lazy-load":true,"multi-load":true}'>
+			<ul class="list">
+				<li class="clearfix">
+					<div class="item-face img-parent"><img data-src="./images/1.jpg" data-mini="./images/2.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="item-face img-parent"><img data-src="./images/2.jpg" data-mini="./images/3.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="item-face img-parent"><img data-src="./images/3.jpg" data-mini="./images/4.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<br/><br/><br/>
+		<div class="smartIMG" data-setting='{"ratio":"16:9","lazy-load":true,"multi-data":"{\"screen\":[1200, 800, 600],\"suffix\":[\"large\",\"middle\",\"small\",\"mini\"]}"}'>
+			<ul class="list">
+				<li class="clearfix">
+					<div class="item-face img-parent"><img src="./images/1.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam recusandae fugiat debitis, assumenda consequuntur officia quis. Porro repudiandae rerum dignissimos molestias unde distinctio nemo fugit! Unde illo ipsum magni, dolores.
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="item-face img-parent"><img data-src="./images/2.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore animi vel minus, sunt nam tempora et deserunt, ex commodi officiis autem itaque consequuntur iusto iure necessitatibus corporis molestias culpa.
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="item-face img-parent"><img data-src="./images/3.jpg" alt=""></div>
+					<div class="item-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi beatae sed ex eveniet quia, quae labore nobis ullam ratione fugiat odit, perspiciatis corrupti, repudiandae maxime deleniti voluptatibus quod sunt quasi?
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>
